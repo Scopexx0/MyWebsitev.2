@@ -1,0 +1,331 @@
+#container {
+    display: flex;
+    /* height: 100dvh; */
+  }
+  
+  #vertical {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 100%;
+  }
+  
+  #col {
+    flex: 1; 
+    flex-direction: column;
+      max-width: 50%;
+  }
+  
+  #col p > a {
+    color: #cb6c3b;
+  }
+  
+  #col p > a:hover {
+    color: #aa4f21;
+  }
+  
+  #col h1 {
+    text-align: center;
+    color: #cb6c3b;
+  }
+  
+  #col p > a > button {
+    border-color: rgb(214, 163, 35);
+    border-style: solid;
+    margin: 0 40px;
+    padding: 5px 10px;
+  }
+  
+  #col p > a > button:hover {
+    background-color: rgb(214, 163, 35);
+  }
+  #col form {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: auto auto;
+  }
+  
+  #col p {
+    align-items: center;
+    text-align: center;
+  }
+  
+  #col h2{
+    text-align: center;
+  }
+  
+  #col li{
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+  #col h3{
+    text-align: center;
+  }
+  
+  .sticky-col {
+    position: sticky;
+    top: 20px; /* Adjust this to set how far from the top the column should stick */
+    align-self: flex-start;
+    /* top: 50%; */
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  }
+  
+  #top_backlog {
+    border-width: 2px;
+    border-color: white;
+    border-style: double;
+    margin: 1% 25%;
+    padding-bottom: 20px;
+    border-radius: 30px;
+  }
+  
+  #top_backlog:hover {
+    background-color: #7f6085;
+  }
+  
+  #cards li{
+    border-width: 2px;
+    border-color: white;
+    border-style: double;
+    margin: 1% 28%;
+    padding-bottom: 20px;
+    border-radius: 30px;
+    list-style: none;
+  }
+  
+  /* Upgrade Form */
+  #cards li > form{
+    width: 100%;
+  }
+  
+  #cards li form > p {
+    margin-top: 0;
+    width: 100%;
+  }
+  
+  /* Update Buttons */
+  #cards li p > button {
+    margin: 0 40px;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 5px 50px;
+    border-style: solid;
+    border-color: rgb(84, 84, 240);
+  }
+  
+  #cards li p > button:hover {
+    background-color: rgb(84, 84, 240);
+  }
+  
+  /* Delete buttons */
+  #cards li form > button {
+    border-color: rgb(240, 84, 84);
+    border-style: solid;
+    margin: 0 40px;
+    padding: 5px 0;
+  }
+  
+  #cards li form > button:hover {
+    background-color: rgb(240, 84, 84);
+  }
+  
+  /* ================================================================ */
+  /* CREATE GAME FORM BACKGROUND */
+  #creategame_box {
+    border-style: solid;
+    border-color: #cb6c3b;
+    border-width: 3px;
+    margin: 0 25%;
+    margin-top: 50%;
+    border-radius: 30px;
+  }
+  
+  #creategame_box:hover {
+    background-color: rgba(203, 107, 59, 0.415);
+  }
+  
+  #creategame_box form {
+    width: max-content;
+  }
+  
+  #creategame_box form #createInput {
+    width: max-content;
+    text-align: center;
+  }
+  
+  #creategame_box form > p {
+    margin-bottom: 0;
+  }
+  
+  #creategame_box p > button {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: #7f6085;
+    padding: 3px 6px;
+  }
+  
+  #creategame_box p > button:hover {
+    background-color: #7f6085;
+  }
+  
+  #creategame_box p a button {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: rgb(236, 181, 42);
+    padding: 3px 6px;
+  }
+  
+  #creategame_box p a button:hover {
+    background-color: rgb(236, 181, 42);
+  }
+  
+  /* ================================================================ */
+  /* MATCH BACKGROUND WHEN ON */
+  body {
+      background: #251c27;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+    
+    @keyframes burn {
+      0%, 100% { border-radius: 5% 87% 45% 85%; width: 30vmin; }
+      10% { border-radius: 5% 85% 49% 82%; }
+      20% { border-radius: 0% 85% 45% 87%; width: 31vmin; }
+      30%, 90% { border-radius: 5% 85% 49% 82%; }
+      40% { border-radius: 0% 85% 45% 87%; width: 32vmin; }
+      50% { border-radius: 2% 87% 42% 90%; }
+      60% { border-radius: 5% 97% 45% 88%; }
+      70% { border-radius: 2% 87% 42% 90%; width: 31vmin}
+      80% { border-radius: 5% 97% 45% 88%; }
+    }
+    
+    /* see comment below */
+    #animation:checked ~ .match {
+      animation: burn 4s infinite;
+      width: 50vmin;
+    }
+  
+    .match {
+      /* 
+      The animation is disabled because it can be CPU-consuming.
+      Uncomment the next CSS line to re-enable it. 
+      */
+      animation: burn 4s infinite;
+      /* width of the flame */
+      width: 30vmin;
+      aspect-ratio: 1;
+      background:
+        radial-gradient(100% 100% at 90% 90%, #251c27, #251c2733 20%, #251c2700 50%),
+        radial-gradient(farthest-side at 110% 120%, #251c27, #631, #cb6c3b88, #0000),
+        radial-gradient(at 100% 100%, #fc08, #cb6c3b, #eebd7600 60%),
+        linear-gradient(135deg, #fff0 20%, #ff0)
+        ;
+      background-color: #ffe;
+      border-radius: 2% 87% 45% 85%;
+      box-shadow:
+        inset 2vmin 2vmin 2vmin -1.5vmin #f808,
+        inset  -1vmin -1vmin 5vmin -3vmin #00f7,
+        inset  0vmin  -1vmin 5vmin -3vmin #00f8,
+        inset  -1vmin -1vmin 2vmin -2vmin #251c27,
+        inset  -1vmin -1vmin 3vmin -1vmin #251c27,
+        inset  -1vmin -1vmin 2vmin #fc08,
+        -0.5vmin -0.5vmin 1vmin #ff08,
+        -1vmin -1vmin 2vmin #ce8c47,
+        -2vmin -2vmin 10vmin 1vmin #251c27,
+        -6vmin -6vmin 35vmin 3vmin #fa06;
+      filter: blur(0.1vmin);
+      transform: rotate(45deg);
+      /* demo */
+      position: fixed;
+      /* Position of the entire match */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -15vmin) rotate(45deg);
+    }
+  
+    .match::after {
+      content: "";
+      display: block;
+      /* Size of the head */
+      width: 6vmin;
+      height: 5vmin;
+      background: 
+        linear-gradient(45deg, #f002, #fff0),
+        linear-gradient(to right, #d68356, #e5653e 3%, #d0363b 20%, #251c27);
+      top: 24vmin;
+      left: 24vmin;
+      border-radius: 100% / 120% 80% 80% 120%;
+      position: absolute;
+      transform: translate(-50%, -50%) rotate(45deg);
+      box-shadow: 0 0 5vmin 3vmin #251c27aa, inset -1vmin 0 1.5vmin #251c27;
+    }
+    
+    .match::before {
+      content: "";
+      display: block;
+      /* seize of the stick */
+      width: 20vmin;
+      height: 3vmin;
+      background: linear-gradient(to right, #d605, #321, #251c27);
+      top: 32vmin;
+      left: 32vmin;
+      position: absolute;
+      transform: translate(-50%, -50%) rotate(45deg);
+      box-shadow: 0 0 5vmin 3vmin #251c27aa, inset -1vmin 0 1.5vmin #251c27aa
+    }
+    
+  
+  /* ================================================================ */
+  /* MATCH BACKGROUND WHEN OFF */
+  
+  .matchOff {
+    width: 30vmin;
+    aspect-ratio: 1;
+    border-radius: 2% 87% 45% 85%;
+    transform: rotate(45deg);
+    /* demo */
+    position: fixed;
+  /* Position of the entire match */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -15vmin) rotate(45deg);
+  }
+  
+  .matchOff::after {
+    content: "";
+    display: block;
+  /* Size of the head */
+    width: 6vmin;
+    height: 5vmin;
+    background: 
+      linear-gradient(45deg, #f002, #fff0),
+      linear-gradient(to right, #d68356, #e5653e 3%, #d0363b 20%, #251c27);
+    top: 24vmin;
+    left: 24vmin;
+    border-radius: 100% / 120% 80% 80% 120%;
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(45deg);
+    box-shadow: 0 0 5vmin 3vmin #251c27aa, inset -1vmin 0 1.5vmin #251c27;
+  }
+  
+  .matchOff::before {
+    content: "";
+    display: block;
+  /* seize of the stick */
+    width: 20vmin;
+    height: 3vmin;
+    background: linear-gradient(to right, #d605, #321, #251c27);
+    top: 32vmin;
+    left: 32vmin;
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(45deg);
+    box-shadow: 0 0 5vmin 3vmin #251c27aa, inset -1vmin 0 1.5vmin #251c27aa
+  }
+  
